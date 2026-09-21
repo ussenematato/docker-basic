@@ -1,0 +1,22 @@
+1. docker build -t mysql-image -f api/db/dockerFile .
+
+2. docker run -d --rm --name mysql-container mysql-image
+
+Criar ficheiro script.sql
+criar uma base de dados, 
+entrar na base
+criar uma tabela
+inserir dados na tabela
+
+3. docker exec -i mysql-container mysql -uroot -proot < api/db/script.sql
+
+4. docker exec -it mysql-container /bin/bash
+
+5. mysql -uroot -proot
+
+6. mysql> use nome_da_base_de_dados;
+7. mysql> show tables;
+8. mysql> select * from nome_da_tabela;
+
+
+docker run  -d -v $(pwd)/api/db/data:var/lib/mysql --rm --name mysql-container mysql-image
